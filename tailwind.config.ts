@@ -8,12 +8,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        prompt: ['"Prompt"', 'sans-serif'],
       },
-    },
+      fontWeight: {
+        thin: "100",
+        extralight: "200",
+        light: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+        extrabold: "800",
+        black: "900",
+      },
+      fontStyle: {
+        normal: 'normal',
+        italic: 'italic',
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(to right, #ff7e5f, #feb47b)', 
+      },
+    }
+  },
+  variants: {
+    fontStyle: ['responsive', 'hover', 'focus'], // Add other variants if needed
   },
   plugins: [],
 };
