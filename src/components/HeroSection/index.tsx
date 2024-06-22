@@ -13,7 +13,7 @@ const HeroSection = () => {
                     <h2 className='text-lg md:text-5xl font-extrabold text-gradient md:uppercase'>i am {' '}</h2> 
                     <h1 className="text-5xl font-extrabold text-gradient uppercase">Rotimi Oluwafemi</h1>
                 </div>
-                <p className="text-lg">I'm a full-stack developer based in Nigeria</p>
+                <p className="text-lg">I am a full-stack developer based in Nigeria</p>
                 <p>I work with technologies like {' '}
                     <span className='font-semibold text-gradient'>
                         <TypeIt
