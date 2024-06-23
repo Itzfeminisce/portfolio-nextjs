@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} p-4`}>
         {/* Navigation bar */}
-        <div className="max-w-screen-lg mx-auto py-5 px-4 md:px-0"> <Navbar /> </div>
+        <div className="max-w-screen-lg mx-auto md:px-0"> <Navbar /> </div>
 
         {children}
 

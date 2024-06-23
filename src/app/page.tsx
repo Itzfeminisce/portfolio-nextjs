@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="max-w-screen-lg mx-auto p-5">
+    <main className="max-w-screen-lg mx-auto">
 
       {/* Hero section */}
       <section className="h-screen">

@@ -4,8 +4,11 @@
 @tailwind utilities;
 
 @layer base {
+  body{
+    @apply bg-slate-950;
+  }
   * {
-    @apply bg-slate-950 text-white font-prompt scroll-smooth;
+    @apply text-white font-prompt scroll-smooth;
   }
 }
 
