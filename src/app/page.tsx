@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroSection from "../components/HeroSection";
 import Stacks from "../components/Stacks";
 import Link from "next/link";
+import Button from "@/components/Button";
 
 export default function Home() {
   return (
@@ -9,19 +10,11 @@ export default function Home() {
 
       {/* Hero section */}
       <section className="h-screen">
-        <HeroSection />
+        <div className="mb-5">
+          <HeroSection />
+        </div>
 
-        {/* Scroll down link */}
-        <Link href={'#tech-stacks'} className="hidden md:flex items-center justify-center mt-10 animate-bounce" >
-          <Image src="/svgs/icons/arrow-down.svg" alt="Go Down" width={100} height={100} />
-        </Link>
-      </section>
-
-
-      {/* Stacks section */}
-      <section id="tech-stacks" className="h-screen">
-        <br /><br />
-        <Stacks />
+        <Button lead gradient="bg-gradient-to-r from-red-600 via-purple-600 to-blue-600" href="#" >Download Resume</Button>
       </section>
     </main>
   );

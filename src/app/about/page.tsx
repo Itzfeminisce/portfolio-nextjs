@@ -1,58 +1,8 @@
-import ContactMe from '@/components/Form/ContactMe'
 import Image from 'next/image'
 import React, { PropsWithChildren, ReactNode } from 'react'
 import {twMerge} from 'tailwind-merge'
+import { Projects } from '../Links'
 
-const projects = [
-  {
-    id: 1,
-    title: 'E-commerce Website',
-    description: 'A full-stack e-commerce website built with React, Node.js, Express, and MongoDB.',
-    image: '/images/author.png',
-    github: 'https://github.com',
-    preview: 'https://preview.com'
-  },
-  {
-    id: 2,
-    title: 'Blog Website',
-    description: 'A full-stack blog website built with React, Node.js, Express, and MongoDB.',
-    image: '/images/author.png',
-    github: 'https://github.com',
-    preview: 'https://preview.com'
-  },
-  // {
-  //   id: 3,
-  //   title: 'Social Media Website',
-  //   description: 'A full-stack social media website built with React, Node.js, Express, and MongoDB.',
-  //   image: '/images/author.png',
-  //   github: 'https://github.com',
-  //   preview: 'https://preview.com'
-  // },
-  // {
-  //   id: 4,
-  //   title: 'Weather App',
-  //   description: 'A weather app built with React, Node.js, Express, and MongoDB.',
-  //   image: '/images/author.png',
-  //   github: 'https://github.com',
-  //   preview: 'https://preview.com'
-  // },
-  // {
-  //   id: 5,
-  //   title: 'Todo App',
-  //   description: 'A todo app built with React, Node.js, Express, and MongoDB.',
-  //   image: '/images/author.png',
-  //   github: 'https://github.com',
-  //   preview: 'https://preview.com'
-  // },
-  // {
-  //   id: 6,
-  //   title: 'Calculator App',
-  //   description: 'A calculator app built with React, Node.js, Express, and MongoDB.',
-  //   image: '/images/author.png',
-  //   github: 'https://github.com',
-  //   preview: 'https://preview.com'
-  // }
-]
 
 const skills = [
   {
@@ -122,16 +72,6 @@ const About = () => {
         ))}
       </div>
 
-      <Title>Projects</Title>
-      <div className='flex items-start justify-between flex-wrap gap-4'>
-        {projects.map(project => (
-          <div key={project.id} className='flex-1 flex-grow hover:scale-95 transition-all'>
-            <ProjectCard title={project.title} description={project.description} image={project.image} github={project.github} preview={project.preview}>
-              {project.title}
-            </ProjectCard>
-          </div>
-        ))}
-      </div>
 
       <Title>Education</Title>
       <Paragraph title='Bachelor of Science in Computer Science (in view)' subtitle='University of Lagos, Nigeria, 2022'>
@@ -149,64 +89,14 @@ const About = () => {
       </Paragraph>
 
 
-      <div className='md:flex gap-4 items-center justify-between p-4  bg-indigo-700/20'>
-        <div className='p-5 rounded-lg'>
-          <h1 className='text-lg font-semibold text-gradient'>Contact Me</h1>
-        <p className='text-sm font-light italic text-slate-300'>
-        If you have any questions or if you would like to work with me on a project, feel free to send me a message. I am always happy to chat and I am excited to hear from you.
-        </p>
-        <hr className='opacity-90 my-3'/>
-        <ContactMe />
-        </div>
-        <div className='hidden md:block'>
-        <ContactAddress />
-        </div>
-      </div>
-
     </main>
   )
 }
 
-const ContactAddress = () => {
-  return (
-    <div>
-      <h1 className='text-lg uppercase font-semibold text-gradient'>Contact Address</h1>
-      <h2 className='text-xl font-semibold'>Lagos, Nigeria</h2>
-      <p>Phone: +234 123 456 7890</p>
-      <p>Primary Email: rofesol.ng@gmail.com</p>
-      <p>Work Email: oluwafemi@notjustevent.com</p>
-    </div> 
-  )
-}
 
 const Title: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <h1 className='md:text-3xl text-xl text-gradient font-semibold capitalize text-slate-500 my-5'>{children}</h1>
-  )
-}
-
-interface ProjectCardProps extends PropsWithChildren {
-  title: string
-  description: string
-  image: string
-  github: string
-  preview: string
-}
-const ProjectCard: React.FC<ProjectCardProps> = ({ children, description, github, image, preview, title }) => {
-  return (
-    <div className="flex flex-col justify-between rounded-lg shadow-lg overflow-hidden w-full cursor-pointer">
-      <div className='w-full h-52 overflow-hidden'>
-      <Image src={image} alt={title} width={500} height={500} objectFit='cover' />
-      </div>
-      <div className="p-6">
-        <h2 className="text-xl line-clamp-1 font-semibold text-gray-800">{title}</h2>
-        <p className="text-gray-600 mt-2 line-clamp-3">{description}</p>
-        <div className="flex mt-4">
-          <a href={github} target="_blank" rel="noopener noreferrer" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mr-2">GitHub</a>
-          <a href={preview} target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md">Preview</a>
-        </div>
-      </div>
-    </div>
   )
 }
 

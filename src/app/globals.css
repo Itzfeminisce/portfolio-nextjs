@@ -3,10 +3,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body{
-    @apply bg-slate-950;
+@layer utilities {
+  .bg-gradient-custom {
+    background-color: #4158d0;
+    background-image: linear-gradient(
+      43deg,
+      #4158d0 0%,
+      #c850c0 46%,
+      #ffcc70 100%
+    );
   }
+
+  .project-card-bg {
+    @apply shadow-md bg-gradient-to-br from-fuchsia-400 via-emerald-100 to-slate-200;
+    /* background-image: linear-gradient( 109.6deg,  rgba(212,80,80,1) 11.2%, rgba(177,57,57,1) 100.2% ); */
+  }
+
+  .btn-gradient{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(64,84,178,1) 0%, rgba(219,2,234,1) 90% );
+  
+    &.primary {
+      background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+  }
+}
+@layer base {
   * {
     @apply text-white font-prompt scroll-smooth;
   }
@@ -21,12 +42,12 @@
     @apply font-prompt text-2xl font-semibold italic;
 
     &:hover {
-      @apply text-red-500;
+      @apply text-gradient scale-95 transition-all;
     }
   }
 
   .hero-image {
-    @apply w-[300px] h-[300px] rounded-full bg-black overflow-hidden object-contain;
+    @apply w-[250px] md:w-[400px] h-[250px] md:h-[400px] md:rounded-full rounded-lg border-4 bg-black overflow-hidden object-contain;
   }
 
   .nav-link {
@@ -34,10 +55,10 @@
   }
 
   .heading-2 {
-      @apply text-2xl font-bold relative;
-      &::before {
-        content: "";
-        @apply absolute right-[63%] -bottom-1 block w-12 h-1 bg-gradient-to-r from-fuchsia-400 via-emerald-100 to-slate-200 rounded-full;
+    @apply text-2xl font-bold relative;
+    &::before {
+      content: "";
+      @apply absolute right-[63%] -bottom-1 block w-12 h-1 bg-gradient-to-r from-fuchsia-400 via-emerald-100 to-slate-200 rounded-full;
     }
   }
 }
